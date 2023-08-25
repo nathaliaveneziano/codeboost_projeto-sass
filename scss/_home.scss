@@ -104,3 +104,157 @@
     }
   }
 }
+
+.s-resources {
+  padding-top: 15rem;
+  padding-bottom: 10rem;
+
+  .top {
+    @include flex(row, center, space-between);
+    margin-bottom: 5.6rem;
+
+    h2 {
+      font-family: 'PT Sans', sans-serif;
+      font-weight: bold;
+      font-size: 3.2rem;
+      line-height: 130%;
+      color: $gray-01;
+      max-width: 50rem;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 150%;
+      color: $gray-02;
+    }
+  }
+
+  .content {
+    @include flex(row, flex-start, space-between);
+
+    .icon {
+      width: 6.4rem;
+      height: 6.4rem;
+      border-radius: 1.2rem;
+      background-color: rgba(197, 190, 220, 0.1);
+      @include flex(row, center, center);
+      margin-bottom: 3rem;
+    }
+
+    .info {
+      max-width: 24rem;
+
+      h3 {
+        font-weight: 800;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        color: $purple;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+        line-height: 165%;
+        color: $gray-02;
+      }
+    }
+
+    .card-featured {
+      max-width: 28rem;
+      width: 100%;
+      height: 32rem;
+      border-radius: 1.2rem;
+      background-color: rgba(197, 190, 220, 0.1);
+      padding-top: 4.2rem;
+      padding-left: 4.2rem;
+
+      .icon {
+        background-color: $white;
+      }
+
+      .info {
+        max-width: 20rem;
+      }
+    }
+
+    ul {
+      width: 100%;
+      max-width: 90rem;
+      @include flex(row, flex-start, space-between);
+      margin-top: 4.2rem;
+      padding-bottom: 6.4rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      border-bottom: 3px solid rgba(95, 60, 161, 0.1);
+    }
+  }
+
+  // Media Queries
+  @include responsive(991px) {
+    .content {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .card-featured {
+        max-width: 100%;
+        height: auto;
+        padding: 3rem;
+        @include flex(column, center, center);
+
+        .info {
+          max-width: 100%;
+
+          h3,
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(768px) {
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    margin-bottom: 2rem;
+
+    .top {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .content {
+      ul {
+        gap: 2.4rem;
+        padding-right: 0;
+      }
+    }
+  }
+
+  @include responsive(480px) {
+    margin-top: 6rem;
+
+    .content {
+      ul {
+        flex-direction: column;
+        padding-left: 0;
+        margin-top: 3rem;
+
+        li {
+          @include flex(column, center, center);
+
+          h3,
+          p {
+            text-align: center;
+          }
+        }
+      }
+
+      .info {
+        max-width: 95%;
+      }
+    }
+  }
+}
