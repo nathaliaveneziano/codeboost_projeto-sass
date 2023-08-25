@@ -34,15 +34,15 @@ header {
   }
 
   // Media Queries
-  @include responsive(60rem) {
+  @include responsive(600px) {
+    height: 8rem;
+
     nav {
       display: none;
     }
   }
 
-  @include responsive(48rem) {
-    height: 8rem;
-
+  @include responsive(480px) {
     .logo {
       max-width: 140px;
     }
